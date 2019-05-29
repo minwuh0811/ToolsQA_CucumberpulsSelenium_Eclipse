@@ -1,0 +1,9 @@
+package Test;
+import 
+
+public class addKommunTest {
+	
+	Kommun kommunTest=new Kommun("partille");
+	
+
+}

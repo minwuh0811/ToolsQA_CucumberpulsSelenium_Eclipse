@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.openqa.selenium.WebDriver"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.chrome.ChromeDriver"/>
+    <fullyQualifiedTypeName name="cucumber.api.java.en.Then"/>
+    <fullyQualifiedTypeName name="cucumber.api.PendingException"/>
+    <fullyQualifiedTypeName name="cucumber.api.java.en.Given"/>
+    <fullyQualifiedTypeName name="cucumber.api.java.en.When"/>
+    <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="mainKommun.Kommun"/>
+    <fullyQualifiedTypeName name="mainKommun.kommunList"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.Test"/>
+</qualifiedTypeNameHistroy>

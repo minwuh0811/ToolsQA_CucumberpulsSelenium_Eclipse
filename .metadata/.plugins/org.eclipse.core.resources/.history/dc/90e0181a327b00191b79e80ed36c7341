@@ -1,0 +1,56 @@
+package StepDefiniation;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import cucumber.api.PendingException;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class Statistik_skolutvecling_Områden_steps {
+	private WebDriver driver;
+	private Select mySelect;
+	private int timeoutInSeconds;
+	
+	@Given("^Website for Skolutveckling$")
+	public void website_for_Skolutveckling() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\bishe\\ToolsQA_Cucumber\\OnlineStore\\chromedriver.exe");
+		driver = (WebDriver) new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.get("https://www.skolverket.se/skolutveckling/statistik/sok-statistik-om-forskola-skola-och-vuxenutbildning?sok=SokA");
+	}
+	
+	@When("^User Navigate to kommun$")
+	public void user_Navigate_to_kommun() throws Throwable {
+		WebDriverWait wait =  new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("SOK_A_KOMMUN"));
+
+		
+				// Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+	@When("^User choose Partille och Click Ja$")
+	public void user_choose_Partille_och_Click_Ja() throws Throwable {
+		mySelect=new Select(driver.findElement(By.id("SOK_A_KOMMUN")));
+		mySelect.selectByVisibleText("Partille");
+		driver.findElement(By.id("show-statistics-buttonSokA")).click();
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+	@Then("^Webpage showed$")
+	public void webpage_showed() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		System.out.println("Successful");
+	    throw new PendingException();
+	}
+
+}

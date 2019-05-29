@@ -1,0 +1,11 @@
+package Test;
+import mainKommun.kommunList;
+import org.junit.jupiter.api.Test;
+import mainKommun.Kommun;
+
+@Test
+public class addKommunTest {
+	Kommun kommunTest=new Kommun("partille");
+	kommunList kommunListTest= new kommunList();
+	kommunListTest.addKommun(kommunTest);
+}

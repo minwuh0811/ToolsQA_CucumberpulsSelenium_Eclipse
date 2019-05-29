@@ -1,0 +1,10 @@
+
+import org.junit.jupiter.api.Test;
+
+@Test
+public class addKommunTest {
+	Kommun kommunTest=new Kommun("Partille");
+	
+	
+
+}

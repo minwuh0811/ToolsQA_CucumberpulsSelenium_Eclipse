@@ -1,0 +1,6 @@
+
+public class Kommun {
+	private String Kommunname;
+
+
+}

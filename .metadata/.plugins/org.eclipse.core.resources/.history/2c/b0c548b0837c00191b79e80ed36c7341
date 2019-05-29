@@ -1,0 +1,75 @@
+package StepDefiniation;
+import java.util.Iterator;
+import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import cucumber.api.PendingException;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class Statistik_skolutvecling_Områden_steps {
+	private WebDriver driver;
+	private Select mySelect;
+	
+	@Given("^Website for Skolutveckling$")
+	public void website_for_Skolutveckling() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\bishe\\ToolsQA_Cucumber\\OnlineStore\\chromedriver.exe");
+		driver = (WebDriver) new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.get("https://www.skolverket.se/skolutveckling/statistik/sok-statistik-om-forskola-skola-och-vuxenutbildning?sok=SokA");
+	}
+	
+	@When("^User Navigate to kommun$")
+	public void user_Navigat_to_kommun() throws Throwable {
+		By locator=By.id("SOK_A_KOMMUN");
+		mySelect = new Select(fluentWait(locator));
+	}
+
+	@When("^User choose Partille och Click Ja$")
+	public void user_choose_Partille_och_Click_Ja() throws Throwable {
+		mySelect.selectByVisibleText("Partille");
+		driver.findElement(By.id("show-statistics-buttonSokA")).click();
+	    // Write code here that turns the phrase above into concrete actions
+	}
+	@Then("^Webpage showed$")
+	public void webpage_showed() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		WebDriverWait wait =  new WebDriverWait(driver, 10);
+		By locator = By.id("change_statA");
+		WebElement foo =wait.until(ExpectedConditions.elementToBeClickable(locator));
+	
+	}
+	
+	
+
+	
+	
+
+	public WebElement fluentWait(final By locator) {
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+	            .withTimeout(30, TimeUnit.SECONDS)
+	            .pollingEvery(5, TimeUnit.SECONDS)
+	            .ignoring(NoSuchElementException.class);
+
+	    WebElement foo = wait.until(new Function<WebDriver, WebElement>() {
+	        public WebElement apply(WebDriver driver) {
+	            return driver.findElement(locator);
+	        }
+	    });
+
+	    return  foo;
+	};
+
+}

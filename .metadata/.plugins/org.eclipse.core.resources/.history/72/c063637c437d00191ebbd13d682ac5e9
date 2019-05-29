@@ -1,0 +1,14 @@
+package mainKommun;
+import java.util.ArrayList;
+
+public class kommunList {
+	private Kommun kommun;
+	private ArrayList<Kommun> kommunList;
+	
+	public void addKommun(Kommun kommun) {
+		kommunList.add(kommun);	
+	}
+	
+	
+
+}

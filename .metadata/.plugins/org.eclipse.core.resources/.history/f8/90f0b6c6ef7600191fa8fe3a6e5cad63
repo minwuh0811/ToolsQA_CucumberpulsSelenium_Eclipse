@@ -1,0 +1,27 @@
+package CucumberTest;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+
+
+public class SeleniumTest {
+	
+	
+ public static void main(String[] args) {
+	 
+ // Create a new instance of the  driver
+	 System.setProperty("webdriver.chrome.driver", "C:\\Users\\bishe\\ToolsQA_Cucumber\\OnlineStore\\chromedriver.exe");
+	 WebDriver driver = (WebDriver) new ChromeDriver();
+	driver.get("https://www.skolverket.se/skolutveckling/statistik/sok-statistik-om-forskola-skola-och-vuxenutbildning?sok=SokA");
+	new Select(driver.findElement(By.id("SOK_A_KOMMUN"))).selectByVisibleText("Partille");
+
+	
+	
+   
+ 
+ }
+ 
+}
